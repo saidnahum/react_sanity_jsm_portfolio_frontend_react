@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { images } from '../../constants';
 import { useEffect, useState } from 'react';
 import { urlFor, client } from '../../client';
+import { AppWrap, MotionWrap } from '../../wrapper';
 
 const About = () => {
 
@@ -13,8 +14,6 @@ const About = () => {
       client.fetch(query)
          .then((data) => setAbouts(data));
    }, []);
-
-   console.log(abouts);
 
    return (
       <>
@@ -41,4 +40,8 @@ const About = () => {
    )
 }
 
-export default About;
+export default AppWrap(
+   MotionWrap(About, 'app__about'), 
+   'about',
+   'app__whitebg'
+);
