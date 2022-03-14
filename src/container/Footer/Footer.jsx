@@ -38,7 +38,7 @@ const Footer = () => {
 
    return (
       <>
-         <h2 className='head-text'>Take a coffe & chat with me</h2>
+         <h2 className='head-text'>Take a <span>coffe</span> & chat with <span>me</span></h2>
 
          <div className='app__footer-cards'>
             <div className='app__footer-card'>
@@ -46,10 +46,10 @@ const Footer = () => {
                <a href="mailto:saidnahum.dev@gmail.com"  className='p-text'>saidnahum.dev@gmail.com</a>
             </div>
 
-            <div className='app__footer-card'>
+            {/* <div className='app__footer-card'>
                <img src={images.mobile} alt="mobile" />
                <a href="tel: +52 (5530784358)"  className='p-text'>5530784358</a>
-            </div>
+            </div> */}
          </div>
 
          {!isFormSubmitted ? 
@@ -86,5 +86,5 @@ const Footer = () => {
 export default AppWrap(
    MotionWrap(Footer, 'app__footer'),
    'contact',
-   'app__whitebg'
+   'app__primarybg'
 );
