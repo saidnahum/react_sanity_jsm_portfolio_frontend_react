@@ -12,7 +12,7 @@ const Skills = () => {
 
    useEffect(() => {
       const query = '*[_type == "experiences"] | order(_createdAt desc)';
-      const skillsQuery = '*[_type == "skills"] | order(_createdAt desc)';
+      const skillsQuery = '*[_type == "skills"] | order(_createdAt asc)';
 
       client.fetch(query)
          .then((data) => {
@@ -27,7 +27,7 @@ const Skills = () => {
 
    return (
       <>
-         <h2 className='head-text'>Skills & Experience</h2>
+         <h2 className='head-text'>Skills</h2>
 
          <div className='app__skills-container'>
             <motion.div className='app__skills-list'>
@@ -49,7 +49,7 @@ const Skills = () => {
                }
             </motion.div>
 
-            <motion.div className='app__skills-exp'>
+            {/* <motion.div className='app__skills-exp'>
                {
                   experience?.map((experience, index) => (
                      <motion.div className='app__skills-exp-item' key={experience.year}>
@@ -88,7 +88,7 @@ const Skills = () => {
 
                   ))
                }
-            </motion.div>
+            </motion.div> */}
          </div>
       </>
    )
